@@ -7,18 +7,7 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./todo.page.scss'],
 })
 export class TodoPage implements OnInit {
-  todos: Todo[] = [
-    {
-      id: 1,
-      title: 'imparare angular',
-      completed: true,
-    },
-    {
-      id: 2,
-      title: 'inserire funzione add',
-      completed: true,
-    },
-  ];
+  todos: Todo[] = [];
   constructor(private todoservive: TodosService) {}
 
   ngOnInit(): void {
