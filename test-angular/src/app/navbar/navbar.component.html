@@ -1,1 +1,12 @@
-<p>navbar works!</p>
+<div id="container">
+  <div id="todos">
+    <a [routerLink]="['todo']" routerLinkActive="router-link-active"
+      ><h2>Todos</h2></a
+    >
+  </div>
+  <div id="completati">
+    <a [routerLink]="['completed']" routerLinkActive="router-link-active"
+      ><h2>Completati</h2></a
+    >
+  </div>
+</div>
