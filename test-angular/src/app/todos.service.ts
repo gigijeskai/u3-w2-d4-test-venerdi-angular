@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './interfaces/todo';
+import { NewTodo } from './classes/new-todo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
-  allTodos: Todo[] = [
+  allTodos: NewTodo[] = [
     {
       id: 1,
       title: 'imparare angular',
@@ -19,4 +19,7 @@ export class TodosService {
   ];
 
   constructor() {}
+  addTodo(obj: NewTodo) {
+    this.allTodos.push(obj);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../interfaces/todo';
+import { NewTodo } from '../classes/new-todo';
+
 import { TodosService } from '../todos.service';
 
 @Component({
@@ -7,10 +8,15 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./todo.page.scss'],
 })
 export class TodoPage implements OnInit {
-  todos: Todo[] = [];
+  newTodo: NewTodo = new NewTodo();
+  todos: NewTodo[] = [];
   constructor(private todoservive: TodosService) {}
 
   ngOnInit(): void {
     this.todos = this.todoservive.allTodos;
+  }
+  addTodo(obj: NewTodo) {
+    this.todoservive.addTodo(obj);
+    this.newTodo = new NewTodo();
   }
 }
