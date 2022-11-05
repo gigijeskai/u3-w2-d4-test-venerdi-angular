@@ -9,17 +9,20 @@ export class TodosService {
     {
       id: 1,
       title: 'imparare angular',
-      completed: true,
+      completed: false,
     },
     {
       id: 2,
       title: 'inserire funzione add',
-      completed: true,
+      completed: false,
     },
   ];
 
   constructor() {}
   addTodo(obj: NewTodo) {
     this.allTodos.push(obj);
+  }
+  checkTodo(i: number) {
+    this.allTodos.splice(i, 1);
   }
 }

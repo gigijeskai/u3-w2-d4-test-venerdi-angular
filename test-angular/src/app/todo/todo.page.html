@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let item of todos; let i = index">
       - {{item.title}}
-      <button></button>
+      <button id="check" (click)="checkTodo(i)">&#10003;</button>
     </li>
   </ul>
 
@@ -10,4 +10,5 @@
     <input type="text" [(ngModel)]="newTodo.title" />
     <button (click)="addTodo(newTodo)">+</button>
   </div>
+  {{todos | json}}
 </div>

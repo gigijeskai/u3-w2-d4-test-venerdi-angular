@@ -10,13 +10,16 @@ import { TodosService } from '../todos.service';
 export class TodoPage implements OnInit {
   newTodo: NewTodo = new NewTodo();
   todos: NewTodo[] = [];
-  constructor(private todoservive: TodosService) {}
+  constructor(private todoservice: TodosService) {}
 
   ngOnInit(): void {
-    this.todos = this.todoservive.allTodos;
+    this.todos = this.todoservice.allTodos;
   }
   addTodo(obj: NewTodo) {
-    this.todoservive.addTodo(obj);
+    this.todoservice.addTodo(obj);
     this.newTodo = new NewTodo();
+  }
+  checkTodo(i: number) {
+    this.todoservice.checkTodo(i);
   }
 }
