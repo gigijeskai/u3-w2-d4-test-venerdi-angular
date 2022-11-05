@@ -1,11 +1,13 @@
 <div id="container">
   <ul>
-    <li *ngFor="let item of todos; let i = index">- {{item.title}}</li>
+    <li *ngFor="let item of todos; let i = index">
+      - {{item.title}}
+      <button></button>
+    </li>
   </ul>
 
   <div id="input">
     <input type="text" [(ngModel)]="newTodo.title" />
     <button (click)="addTodo(newTodo)">+</button>
   </div>
-  {{todos | json}}
 </div>
