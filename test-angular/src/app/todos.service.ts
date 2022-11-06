@@ -15,6 +15,5 @@ export class TodosService {
   checkTodo(i: number) {
     let completato: NewTodo[] = this.allTodos.splice(i, 1);
     this.completedList.push(completato[i]);
-    console.log(this.completedList);
   }
 }

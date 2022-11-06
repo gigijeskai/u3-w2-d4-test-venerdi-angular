@@ -1,5 +1,6 @@
 <div id="container">
   <ul>
+    <li *ngIf="todos.length == 0">Opps, non ci sono Task</li>
     <li *ngFor="let item of todos; let i = index">
       - {{item.title}}
       <button id="check" (click)="checkTodo(i)">&#10003;</button>
