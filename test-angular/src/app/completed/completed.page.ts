@@ -7,7 +7,10 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./completed.page.scss'],
 })
 export class CompletedPage implements OnInit {
-  constructor() {}
+  completedList: NewTodo[] = [];
+  constructor(private todoservice: TodosService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.completedList = this.todoservice.completedList;
+  }
 }

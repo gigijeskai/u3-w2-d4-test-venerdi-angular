@@ -1,6 +1,5 @@
 <div id="container">
   <ul>
-    <li>-</li>
-    <li>-</li>
+    <li *ngFor="let item of completedList; let i = index">- {{item.title}}</li>
   </ul>
 </div>

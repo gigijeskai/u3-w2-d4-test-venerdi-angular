@@ -21,5 +21,6 @@ export class TodoPage implements OnInit {
   }
   checkTodo(i: number) {
     this.todoservice.checkTodo(i);
+    this.newTodo = new NewTodo();
   }
 }

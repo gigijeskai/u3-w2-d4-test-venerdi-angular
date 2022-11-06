@@ -5,24 +5,16 @@ import { NewTodo } from './classes/new-todo';
   providedIn: 'root',
 })
 export class TodosService {
-  allTodos: NewTodo[] = [
-    {
-      id: 1,
-      title: 'imparare angular',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'inserire funzione add',
-      completed: false,
-    },
-  ];
+  completedList: NewTodo[] = [];
+  allTodos: NewTodo[] = [];
 
   constructor() {}
   addTodo(obj: NewTodo) {
     this.allTodos.push(obj);
   }
   checkTodo(i: number) {
-    this.allTodos.splice(i, 1);
+    let completato: NewTodo[] = this.allTodos.splice(i, 1);
+    this.completedList.push(completato[i]);
+    console.log(this.completedList);
   }
 }
